@@ -45,8 +45,12 @@ class SafeStackingClassifier(StackingClassifier):
             for fold_idx, (train_idx, val_idx) in enumerate(self.skf_.split(X, y)):
                 self._log(f"\n🌊 [WAVE {fold_idx + 1}/{self.cv}] Checking artifacts...", 1)
                 
-                X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]
-                y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]
+                if hasattr(X, 'iloc'):
+                    X_tr, X_va = X.iloc[train_idx], X.iloc[val_idx]
+                    y_tr, y_va = y.iloc[train_idx], y.iloc[val_idx]
+                else:
+                    X_tr, X_va = X[train_idx], X[val_idx]
+                    y_tr, y_va = y[train_idx], y[val_idx]
 
                 _ = Parallel()(
                     delayed(self._fit_save_base_and_oof)(name, est, X_train, y_train, X_val, y_val, fold_idx)
