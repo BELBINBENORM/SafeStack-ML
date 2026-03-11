@@ -25,7 +25,7 @@ pip install
 Run this in a cell to install the library directly from GitHub:
 
 ```python
-!pip install git+[https://github.com/BELBINBENORM/SafeStack-ML.git](https://github.com/BELBINBENORM/SafeStack-ML.git)
+!pip install git+https://github.com/BELBINBENORM/SafeStack-ML.git
 ```
 ## 💻 Quick Start
 
