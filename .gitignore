@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Model Artifacts (The "Waves" and saved models)
+model_artifacts/
+*.joblib
+*.pkl
+*.cloudpickle
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Project specific
+*.egg-info/
+dist/
+build/
