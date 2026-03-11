@@ -1,26 +1,24 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="SafeStack-ML",
-    version="0.1.0",
-    description="A robust Stacking Classifier with artifact persistence and memory safety.",
+    version="0.1.1",  
     author="Belbin Beno R M",
     author_email="belbin.datascientist@gmail.com",
-    packages=find_packages(),
+    description="A memory-efficient stacking classifier with automated checkpointing.",
     py_modules=["safe_stack"],
     install_requires=[
         "numpy",
-        "scikit-learn",
+        "pandas",
+        "scikit-learn>=1.4.0",  
         "joblib",
         "cloudpickle",
-        "pandas"
+        "xgboost"
     ],
     classifiers=[
-        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",
-        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    python_requires='>=3.8',
-    license="Apache-2.0",
+    python_requires='>=3.9',
 )
