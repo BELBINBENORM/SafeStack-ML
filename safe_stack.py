@@ -7,9 +7,12 @@ from sklearn.ensemble import StackingClassifier
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import LabelEncoder
 from sklearn.base import clone
-from sklearn.utils import parallel_config
+try:
+    from sklearn.utils import parallel_config
+except ImportError:
+    # Fallback for scikit-learn < 1.4
+    from contextlib import nullcontext as parallel_config
 from joblib import Parallel, delayed
-
 class SafeStackingClassifier(StackingClassifier):
     """
     A robust Stacking Classifier designed for memory efficiency and process safety.
