@@ -21,7 +21,7 @@ class SafeStackingClassifier(StackingClassifier):
     Features automated artifact saving, memory cleanup, and version-mismatch patching.
     """
     
-    def __init__(self, estimators, final_estimator=None, base_path="./", cv=5, n_jobs=-1, verbose=1, **kwargs):
+    def __init__(self, estimators, final_estimator=None, base_path="./", cv=5, n_jobs=-1, verbose=2, **kwargs):
         super().__init__(estimators=estimators, final_estimator=final_estimator, cv=cv, n_jobs=n_jobs, verbose=verbose, **kwargs)
         self.base_path = base_path
         self.parent_pid = os.getpid()
