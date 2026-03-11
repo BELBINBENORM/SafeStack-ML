@@ -45,8 +45,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # 2. Define your experts
 estimators = [
     ('rf', RandomForestClassifier(n_estimators=10)),
-    ('xgb', XGBClassifier(use_label_encoder=False, eval_metric='logloss'))
+    ('xgb', XGBClassifier(eval_metric='logloss'))
 ]
+
 
 # 3. Initialize the Safe Stack
 # Artifacts will be saved to './model_artifacts/' to ensure memory safety
@@ -55,7 +56,8 @@ clf = SafeStackingClassifier(
     final_estimator=LogisticRegression(),
     cv=5,
     n_jobs=-1,
-    base_path="./model_artifacts/"
+    base_path="./model_artifacts/",
+    verbose = 2
 )
 
 # 4. Fit with automated checkpointing and memory safety
