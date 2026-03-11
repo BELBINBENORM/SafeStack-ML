@@ -7,11 +7,13 @@ from sklearn.ensemble import StackingClassifier
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import LabelEncoder
 from sklearn.base import clone
+import contextlib
 try:
     from sklearn.utils import parallel_config
 except ImportError:
-    # Fallback for scikit-learn < 1.4
-    from contextlib import nullcontext as parallel_config
+    @contextlib.contextmanager
+    def parallel_config(**kwargs):
+        yield
 from joblib import Parallel, delayed
 class SafeStackingClassifier(StackingClassifier):
     """
