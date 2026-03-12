@@ -14,8 +14,8 @@
 ### For Local Development:
 ```bash
 # Clone the repository
-git clone [https://github.com/BELBINBENORM/SafeStack-ML.git](https://github.com/BELBINBENORM/SafeStack-ML.git)
-cd SafeStack-ML
+git clone https://github.com/BELBINBENORM/safe-stack-ml.git
+cd safe-stack-ml
 
 # Install via setup.py
 pip install 
@@ -25,7 +25,7 @@ pip install
 Run this in a cell to install the library directly from GitHub:
 
 ```python
-!pip install -q git+https://github.com/BELBINBENORM/SafeStack-ML.git
+!pip install -q git+https://github.com/BELBINBENORM/safe-stack-ml.git
 ```
 ## 💻 Quick Start
 
