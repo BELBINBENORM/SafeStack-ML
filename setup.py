@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="SafeStack-ML",
+    name="safe-stack-ml",
     version="0.1.1",  
     author="Belbin Beno R M",
     author_email="belbin.datascientist@gmail.com",
